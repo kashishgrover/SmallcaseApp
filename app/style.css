@@ -1,59 +1,120 @@
-.smallcase-Task {
-  width: 100%;
-  height: 911pt;
-}
-
 .Navbar {
   width: 100%;
-  height: 53pt;
-  background-image: linear-gradient(to right, #2bc4dd, #3489d1);
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 0 20px;
-  z-index: 1000;
+  height: 60px;
+  z-index: 9;
+  padding: 0;
   position: fixed;
-}
-
-.Background {
-  width: 100%;
-  height: 858pt;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #2e2e2e;
-}
-
-.Rectangle-2 {
-  width: 1204pt;
-  height: 336pt;
-  background-color: #ffffff;
+  display: flex;
+  background-image: linear-gradient(to right, #2bc4dd, #3489d1);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .smallcase-Portfolio {
+  padding-top: 80px;
+  padding-bottom: 10px;
+  left: 30px;
   width: 380px;
   height: 32px;
-  font-family: ProximaNova;
-  font-size: 32px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1;
-  text-align: left;
+  /*text-align: left;*/
   color: #17bcd9;
 }
 
-.container.fix {
-    width: 1140px
+.wrapper {
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 95%;
 }
 
-.container-small {
-    width: 100%;
-    max-width: 825px;
-    margin: 0 auto
+.Panel {
+  width: 100%;
+  height: 336px;
+  background-color: #ffffff;
+  position: relative;
 }
 
-.container-small.fix {
-    width: 825px
+.NEXT{
+  position: absolute;
+  width: 41px;
+  height: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  color: #00a9d2;
+  bottom:32px;
+  right:32px;
+}
+
+.PREV{
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  opacity: 0.3;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  color: #00a9d2;
+  bottom: 32px;
+  left: 32px;
+}
+
+.showing-x-of-y {
+  position: absolute;
+  top: 56px;
+  left: 32px;
+  width: 266px;
+  height: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  color: #00a9d2;
+}
+
+.PanelLabel {
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  left: -8px;
+  top: -8px;
+  position: relative;
+  -webkit-box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.1);
+  box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.1);
+}
+
+.PanelLabelText {
+  left: 0;
+  top: 50%;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: left;
+  color: #000;
+  position: absolute;
+}
+
+.PickStocksLabel {
+  background-color: #00b3d6
+}
+
+.ManagePortfolioLabel {
+  background-color: #287dce;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  /*background-color: #f9f9f9;*/
+  background-color: black;
+  margin: 0;
+  /*line-height: 1.5;*/
 }
