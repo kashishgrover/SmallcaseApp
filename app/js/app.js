@@ -1,5 +1,6 @@
 'use strict';
 
 angular.module('SmallcaseTask', [
-  'SmallcaseTask.controllers',
+  'SmallcaseTask.controller',
+  'SmallcaseTask.filter',
 ]);
