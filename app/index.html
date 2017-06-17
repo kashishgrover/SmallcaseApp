@@ -11,6 +11,7 @@
     <script src="js/app.js"></script>
     <script src="js/controller.js"></script>    
     <script src="js/filter.js"></script>
+    <script src="bower_components/ngDraggable/ngDraggable.js"></script>
   </head>
   <body ng-app="SmallcaseTask" ng-controller="stocksController">
       <nav class="Navbar"></nav>
@@ -26,10 +27,10 @@
             of {{totalStocks}} stocks
           </p>
           <div class="StockCardWrapper flexy">
-            <div class="StockCard" ng-repeat="element in stockPrices | pagination: currentPage * stockPageSize | limitTo: stockPageSize" ng-style="{display: inline-block}">
+            <div class="StockCard" ng-repeat="element in stockPrices | pagination: currentPage * stockPageSize | limitTo: stockPageSize" ng-style="{display: inline-block} " ng-drag="true"><!-- Hover on me  -->
               <div class="StockName">{{element[0]}}</div>
-              <div class="StockPrice">₹ {{element[1]}}</div><!-- Hover on me  -->
-              <!-- <div class="material-icons StockPrice AddStockButton"></div> Then Show This -->
+              <div class="StockPrice">₹ {{element[1]}}</div>
+              <!-- <div class="material-icons StockPrice AddStockButton"></div> --> <!-- Then Show This -->
               <div class="StockLabel">Financial Services</div>
             </div>
           </div>
@@ -43,9 +44,12 @@
           </button>
         </div>
         <br>
-        <div class="Panel">
+        <div class="Panel" >
           <div class="PanelLabel ManagePortfolioLabel PanelLabelText">MANAGE PORTFOLIO</div>
-          <p class="showing-x-of-y">Test</p>
+          <!-- <p class="showing-x-of-y">Test</p> -->
+          <div class="showing-x-of-y"" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style='height:50px;'>
+          <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
+        </div>
         </div>
       </div>
   </body>
