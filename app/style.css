@@ -193,19 +193,42 @@
 }
 
 .StockPrice {
-  padding-top: 22px;
+  margin-top: 22px;
   width: 90px;
   height: 29px;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 100;
   text-align: left;
-  color: #666666;  
+  color: #666666;
   z-index: 21;  
   position: relative;
   float: right;
+  /*background: red;*/
+  /*-moz-border-radius: 50px;*/
+  /*-webkit-border-radius: 50px;*/
 }
 
+/*.StockPrice:hover {
+  color: transparent;
+}
+
+.StockPrice:hover ~ .AddStockButton:after {
+  margin-top: 0px;
+  bottom: 50px;
+  left: 50px;
+  content: 'playlist_add';
+  cursor: pointer;
+  color: #00a9d2;
+  font: 'Material Icons';
+  font-size: 50px;
+  font-weight: 100;
+  z-index: 21;
+  float: right;
+  position: relative;
+  background: white;
+}
+*/
 .StockLabel {
   padding-left: 16px;
   width: 120px;
@@ -222,11 +245,9 @@
 
 body {
   font-family: 'Work Sans', sans-serif;
-  background-color: #ddd;
-  /*background-color: black;*/
+  background-color: #f9f9f9;
   margin: 0;
   min-width: 1204px;
-  /*line-height: 1.5;*/
 }
 
 button {

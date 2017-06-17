@@ -4,6 +4,7 @@
     <title>Smallcase Task</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -27,7 +28,8 @@
           <div class="StockCardWrapper flexy">
             <div class="StockCard" ng-repeat="element in stockPrices | pagination: currentPage * stockPageSize | limitTo: stockPageSize" ng-style="{display: inline-block}">
               <div class="StockName">{{element[0]}}</div>
-              <div class="StockPrice">₹ {{element[1]}}</div>
+              <div class="StockPrice">₹ {{element[1]}}</div><!-- Hover on me  -->
+              <!-- <div class="material-icons StockPrice AddStockButton"></div> Then Show This -->
               <div class="StockLabel">Financial Services</div>
             </div>
           </div>
