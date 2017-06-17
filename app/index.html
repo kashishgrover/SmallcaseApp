@@ -13,7 +13,7 @@
   </head>
   <body ng-app="SmallcaseTask" ng-controller="stocksController">
       <nav class="Navbar"></nav>
-      <div class="wrapper">
+      <div class="wrapper flexy">
         <div class="smallcase-Portfolio">
           smallcase Portfolio Builder
         </div>
@@ -24,10 +24,11 @@
             {{(currentPage * stockPageSize + stockPageSize) > totalStocks ? totalStocks : (currentPage * stockPageSize + stockPageSize)}} 
             of {{totalStocks}} stocks
           </p>
-          <div class="StockCardWrapper">
+          <div class="StockCardWrapper flexy">
             <div class="StockCard" ng-repeat="element in stockPrices | pagination: currentPage * stockPageSize | limitTo: stockPageSize" ng-style="{display: inline-block}">
               <div class="StockName">{{element[0]}}</div>
-              <div class="StockPrice">{{element[1]}}</div>
+              <div class="StockPrice">₹ {{element[1]}}</div>
+              <div class="StockLabel">Financial Services</div>
             </div>
           </div>
           <button class="NEXT"
@@ -45,25 +46,5 @@
           <p class="showing-x-of-y">Test</p>
         </div>
       </div>
-      <!-- <div ui-view=""></div>
-       <h1>Smallcase Task</h1>
-      <h2>Stock Prices</h2>
-      <ul>
-        <li ng-repeat="(name, price) in stockPrices">
-          {{name}} : {{price}}
-        </li>
-      </ul>
-      <h2>Stock EPS</h2>
-      <ul>
-        <li ng-repeat="(name, eps) in stockEPS">
-          {{name}} : {{eps}}
-        </li>
-      </ul>
-      <h2>Stock Historicals</h2>
-      <ul>
-        <li ng-repeat="(name, historical) in stockHistoricals">
-          {{name}} : {{historical}}
-        </li>
-      </ul> -->
   </body>
 </html>
