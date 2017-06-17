@@ -12,6 +12,15 @@ angular.module('SmallcaseTask.controller', [])
 		$scope.stockEPS = data.eps;
 		$scope.stockHistoricals = data.historical;
 	});
+
+	$scope.onDragComplete=function(data,evt){
+       console.log("drag success, data:", data);
+    }
+    $scope.onDropComplete=function(data,evt){
+        // console.log("drop success, data:", data);
+        $scope.dragText = data;
+    }
+
 })
 
 function getArray (obj) {
