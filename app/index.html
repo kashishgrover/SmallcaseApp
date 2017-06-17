@@ -32,11 +32,12 @@
               ng-style="{display: inline-block} " 
               ng-drag="true" 
               ng-drag-data="element" 
-              ng-drag-success="onDragComplete($data,$event)" 
+              ng-drag-success="onDragComplete($data,$event)"
+              ng-click="onClick(element)"
               ng-center-anchor="true"><!-- Hover on me  -->
                 <div class="StockName">{{element[0]}}</div>
                 <div class="StockPrice">₹ {{element[1]}}</div>
-                <!-- <div class="material-icons StockPrice AddStockButton"></div> --> <!-- Then Show This -->
+               <!--  <div class="material-icons StockPrice AddStockButton"></div> --> <!-- Then Show This -->
                 <div class="StockLabel">Financial Services</div>
             </div>
           </div>
@@ -50,9 +51,12 @@
           </button>
         </div>
         <br>
-        <div class="Panel" ng-drop="true" ng-drop-success="onDropComplete($data,$event)" >
+        <div class="Panel" ng-drop="true" ng-drop-success="onDropComplete($data,$event)">
           <div class="PanelLabel ManagePortfolioLabel PanelLabelText">MANAGE PORTFOLIO</div>
-          <p class="showing-x-of-y">{{dragText}}</p>
+          <!-- <p class="showing-x-of-y">{{dragText}}</p> -->
+          <ul class="showing-x-of-y">
+            <li ng-repeat="element in portfolioArray">{{element[0]}} : {{element[1]}}</li>
+          </ul>
         </div>
         </div>
       </div>

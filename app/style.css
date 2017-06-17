@@ -158,6 +158,7 @@
 
 .StockCard {
   float: left;
+  cursor: pointer;
   display: inline-block;
   margin-right: auto;
   margin-bottom: 16px;
@@ -209,7 +210,7 @@
   /*-webkit-border-radius: 50px;*/
 }
 
-/*.StockPrice:hover {
+.StockPrice:hover {
   color: transparent;
 }
 
@@ -218,7 +219,6 @@
   bottom: 50px;
   left: 50px;
   content: 'playlist_add';
-  cursor: pointer;
   color: #00a9d2;
   font: 'Material Icons';
   font-size: 50px;
@@ -227,7 +227,7 @@
   float: right;
   position: relative;
   background: white;
-}*/
+}
 
 .StockLabel {
   padding-left: 16px;
