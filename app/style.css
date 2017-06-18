@@ -243,6 +243,167 @@
   float: left;
 }
 
+.StockRowNameLabel {
+  width: 51px;
+  height: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.14;
+  text-align: center;
+  color: #287dce;
+}
+
+.StockRowPriceLabel {
+  width: 51px;
+  height: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.14;
+  text-align: center;
+  color: #222222;
+}
+
+.StockRowWeight {
+  width: 51px;
+  height: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.14;
+  text-align: center;
+  color: #222222;
+}
+
+.StockRowSharesWrapper {  
+  width: 80px;
+  height: 100%;
+  /*height: 24px;*/
+  /*border-radius: 4px;*/
+  background-color: #ffffff;
+  /*border: solid 1px #dddddd;*/
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  color: #222222;
+  position: relative;
+}
+
+.StockRowSharesCount {
+  width: 40px;
+  height: 24px;
+  /*border: solid 1px #dddddd;*/
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+.IncrementSharesCount {
+  margin-right:10px;
+  width: 20px;
+  height: 24px;
+  cursor: pointer;
+  border: solid 1px #dddddd;
+  display: inline-block;
+  border-radius: 4px;
+  color: #287dce;
+  position: relative;
+  float: right;
+}
+
+.DecrementSharesCount {
+  margin-left:10px;
+  width: 20px;
+  height: 24px;
+  cursor: pointer;
+  border: solid 1px #dddddd;
+  border-radius: 4px;
+  display: inline-block;
+  color: #287dce;
+  position: relative;
+  float: left;
+}
+
+.TableWrapper {
+  position: relative;
+  float: left;
+  top: 56px;
+  left: 32px;
+  width: 456px;
+  height: 280px;
+}
+
+.Portfolio-Overview {
+  width: 240px;
+  height: 29px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+  color: #1d70ca;
+  float: left;
+  position: relative;
+  display: inline-block;
+  top: 56px;
+  left: 70px;
+}
+
+.HistoryGraphWrapper {
+  background: yellow;
+  width: 320px;
+  height: 210px;
+  /*float: left;*/
+  display: inline-block;
+  top: 100px;
+  left: -170px;
+  position: relative;
+  /*left:;*/
+}
+
+.PortfolioDetailsWrapper {
+  background: blue;
+  width: 320px;
+  height: 210px;
+  float: right;
+  display: inline-block;
+  bottom: 114px;
+  right: 20px;
+  position: relative;
+}
+
+table {
+  border-collapse: collapse;
+  position: relative;
+  width: 100%;
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+th, td {
+  background-color: #8fb9e7;
+  width: 25%;
+  position: relative;
+  height: 48px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+tr, td {
+  background: white;
+  color: black;
+  height: 48px !important;
+}
+
+tr:hover {
+  background-color:#f5f5f5
+}
+
 body {
   font-family: 'Work Sans', sans-serif;
   background-color: #f9f9f9;

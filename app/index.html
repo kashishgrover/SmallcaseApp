@@ -53,10 +53,39 @@
         <br>
         <div class="Panel" ng-drop="true" ng-drop-success="onDropComplete($data,$event)">
           <div class="PanelLabel ManagePortfolioLabel PanelLabelText">MANAGE PORTFOLIO</div>
-          <!-- <p class="showing-x-of-y">{{dragText}}</p> -->
-          <ul class="showing-x-of-y">
-            <li ng-repeat="element in portfolioArray">{{element[0]}} : {{element[1]}}</li>
-          </ul>
+          <div class="TableWrapper">
+            <table>
+              <tr>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>SHARES</th>
+                <th>WEIGHT</th>
+              </tr>
+              <tr ng-repeat="element in portfolioArray">
+                <td class="StockRowNameLabel">{{element[0].split(",")[0]}}</td>
+                <td class="StockRowPriceLabel">₹ {{element[0].split(",")[1]}}</td>
+                <td class="StockRowSharesWrapper">
+                  <button class="DecrementSharesCount"
+                    ng-click="decrementShareCount(element)">
+                    - 
+                  </button>
+                  <div class="StockRowSharesCount">{{element[1]}}</div>
+                  <button class="IncrementSharesCount"
+                    ng-click="incrementShareCount(element)">
+                    + 
+                  </button>
+                </td>
+                <td class="StockRowWeight">{{getWeightage(element)}} %</td>
+              </tr>
+            </table>
+          </div>
+          <div class="Portfolio-Overview">
+            Portfolio Overview
+          </div>
+          <div class="HistoryGraphWrapper">
+          </div>
+          <div class="PortfolioDetailsWrapper">
+          </div>
         </div>
         </div>
       </div>
