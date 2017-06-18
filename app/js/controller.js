@@ -15,7 +15,7 @@ angular.module('SmallcaseTask.controller', [])
 		$scope.totalStocks = $scope.stockPrices.length;
     	$scope.numberOfPages = numberOfPages($scope.stockPrices, $scope.stockPageSize);
 		$scope.stockEPSobj = data.eps;
-		console.log("Stock EPS",$scope.stockEPSobj);
+		// console.log("Stock EPS",$scope.stockEPSobj);
 		$scope.stockHistoricals = data.historical;
 	});
 
@@ -69,7 +69,7 @@ angular.module('SmallcaseTask.controller', [])
     	var array = $scope.portfolioArray;
 
     	if (array.length === 0) {
-    		return "Null"
+    		return 0;
     	}
 
     	var stockEPSobj = $scope.stockEPSobj;

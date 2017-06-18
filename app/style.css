@@ -355,7 +355,7 @@
 }
 
 .HistoryGraphWrapper {
-  background: yellow;
+  background: #eee;
   width: 320px;
   height: 210px;
   /*float: left;*/
@@ -404,7 +404,6 @@
 
 .DetailBlock {
   float: left;
-  cursor: pointer;
   display: inline-block;
   margin-right: auto;
   margin-bottom: 16px;
