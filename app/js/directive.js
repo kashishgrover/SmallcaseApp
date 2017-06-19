@@ -1,101 +1,95 @@
 angular.module('SmallcaseTask.directive', [])
 .directive("linearChart", function($window) {
-    return {
-      restrict: "EA",
-      template: "<svg width='850' height='200'></svg>",
-      link: function(scope, elem, attrs){
-        var padding = 20;
-        var pathClass="path";
-        var xScale, yScale, xAxisGen, yAxisGen, lineFun;
+  return {
+    restrict: "EA",
+    template: "<svg width='320' height='210'></svg>",
+    link: function(scope, elem, attrs){
+      var margin = {top: 20, right: 20, bottom: 30, left: 50},
+          width = 320 - margin.left - margin.right,
+          height = 210 - margin.top - margin.bottom;
 
-        var d3 = $window.d3;
-        var rawSvg=elem.find('svg');
-        var svg = d3.select(rawSvg[0]);
-        var dateFormat = d3.time.format("%Y-%m-%d");
-        
-        scope.$watch('arrayToPlot', function(newVal, oldVal) {
-          if (newVal !== oldVal) {
-            drawLineChart(scope.arrayToPlot);
-            console.log("asdf");
-          }
-        });
+      var x = d3.time.scale()
+        .range([0, width]);
 
-        function drawLineChart(array) {
+      var y = d3.scale.linear()
+        .range([height, 0]);
+      
+      var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
 
-          var dateArray = [];
-          var priceArray = [];
+      var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left");
 
-          for (var i=0;i<array.length;i++) {
-            dateArray[i] = array[i].split("***")[0];
-            priceArray[i] = array[i].split("***")[1];
-          }
+      var parseDate = d3.time.format("%Y-%m-%d").parse;
+      
+      var data = null;
+      
+      var rawSvg=elem.find('svg');
+      var svg = d3.select(rawSvg[0])
 
+      scope.$watch('arrayToPlot', function(newVal, oldVal) {
 
-          // console.log(array);
-          setChartParameters(dateArray, priceArray);
+        if (newVal !== oldVal) {
 
-          svg.append("svg:g")
+          d3.selectAll("svg > *").remove();
+
+          arrData = scope.arrayToPlot;
+          
+          data = arrData.map(function(d) {
+            // console.log(+parseDate(d[0]));
+            // console.log(+d[1]);
+            return {
+               date : +parseDate(d[0])/100000,
+               totalprice : +d[1]
+            };            
+          });
+          // console.log(data);
+
+          x.domain(d3.extent(data, function(d) { return d.date; }));
+          y.domain(d3.extent(data, function(d) { return d.totalprice; }));
+
+          var line = d3.svg.line()
+            .x(function(d) { return x(d.date); })
+            .y(function(d) { return y(d.totalprice); });
+
+          svg.append("g")
             .attr("class", "x axis")
-            .attr("transform", "translate(0,180)")
-            .call(xAxisGen);
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis)
+            .text("Time");
 
-          svg.append("svg:g")
+          svg.append("g")
             .attr("class", "y axis")
-            .attr("transform", "translate(20,0)")
-            .call(yAxisGen);
+            .call(yAxis)
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Price (₹)");
 
-          svg.append("svg:path")
-            .attr({
-              d: lineFun(array),
-              "stroke": "blue",
-              "stroke-width": 2,
-              "fill": "none",
-              "class": pathClass
-            });
+          svg.append("path")
+            .datum(data)
+            .attr("fill", "steelblue")
+            .attr("class", "line")
+            .attr("d", line);
         }
+      });
+    }
+  };
+});
 
-        function setChartParameters(dateArray, priceArray){
+// function mapData(arrData) {
+//   var data = arrData.map(function(d) {
+//     console.log(+parseDate(d[0]));
+//     console.log(+d[1]);
+//     return {
+//        date : +parseDate(d[0])/100000,
+//        totalprice : +d[1]
+//     };            
+//   });
 
-          xScale = d3.time.scale()
-            .range([0,1000]);
-
-          // .linear()
-          //   .domain([dateArray[0], dateArray[23]])
-          //   .range([padding + 5, rawSvg.attr("width") - padding]);
-
-          var yScale = d3.scale.linear()
-            .range([1000, 0]);
-
-          // yScale = d3.scale.linear()
-          //   .domain([0, 1200])
-          //   .range([rawSvg.attr("height") - padding, 0]);
-
-          xAxisGen = d3.svg.axis()
-            .scale(xScale)
-            .orient("bottom");
-
-            // .ticks(dateArray.length - 1);
-
-          yAxisGen = d3.svg.axis()
-            .scale(yScale)
-            .orient("left");
-            
-            // .ticks(5);
-
-          lineFun = d3.svg.line()
-            .x(function (d) {
-              var date = d.split("***")[0].split("T")[0];
-              var d3date = dateFormat.parse(String(date));
-              // console.log("'"+date+"'");
-              console.log(d3date);
-              return xScale(d3date);
-            })
-            .y(function (d) {
-               return yScale(d[1]);
-            })
-            .interpolate("basis");
-        }
-
-      }
-    };
-  });
+//   return data;
+// }

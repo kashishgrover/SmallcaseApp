@@ -175,8 +175,9 @@ function getArrayToPlot(formattedArray, portfolioArray) {
     // console.log("historySize: ",historySize)
 
     //Get Historical Dates
+    // console.log(formattedArray[0][1]);
     for (var i=0; i<historySize; i++) {
-        historyDateList.push(formattedArray[0][1][0][0]);
+        historyDateList.push(formattedArray[0][1][i][0]);
     }
 
     //Initialize History Networth List
@@ -198,13 +199,23 @@ function getArrayToPlot(formattedArray, portfolioArray) {
                 for (var k=0; k<historySize; k++) {
                     // console.log(formattedArray[j][1][k][1]);
                     historyNetWorthList[k] = historyNetWorthList[k] + formattedArray[j][1][k][1] * count;
+                    // console.log(historyNetWorthList[k]);
                 }
                 // console.log(formattedArray[j][1][0])
             }
         }
-
     }
 
-    console.log([historyNetWorthList, historyDateList]) //To be returned
-    return [historyNetWorthList, historyDateList];
+    //Refactor the array to have format as ["date", value]
+
+    var arrayToPlot = [];
+
+    for (var i=0; i<historySize; i++) {
+        // arrayToPlot[i] = [String(historyDateList[i]), Math.floor(historyNetWorthList[i])];
+        arrayToPlot[i] = [historyDateList[i], Math.floor(historyNetWorthList[i])];
+    }
+
+    // console.log([historyNetWorthList, historyDateList]) //To be returned
+    // console.log(arrayToPlot);
+    return arrayToPlot;
 }
