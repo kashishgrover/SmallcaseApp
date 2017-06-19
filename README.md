@@ -1,7 +1,9 @@
-#Smallcase Task -- Application for Frontend Developer Role
+# Smallcase Task - Application for Frontend Developer Role
+---
+
 
 #### (Skeleton referred from the [Angular Seed][angular-seed] project.)
-
+---
 
 ## Running the application locally
 ```
@@ -20,5 +22,6 @@ npm start
 ```
 Now browse to the app at [`localhost:8000/index.html`][local-app-url].
 
+[http-server]: https://github.com/indexzero/http-server
 [local-app-url]: http://localhost:8000/index.html
 [angular-seed]: https://github.com/angular/angular-seed
