@@ -212,7 +212,7 @@ function getArrayToPlot(formattedArray, portfolioArray) {
 
     for (var i=0; i<historySize; i++) {
         // arrayToPlot[i] = [String(historyDateList[i]), Math.floor(historyNetWorthList[i])];
-        arrayToPlot[i] = [historyDateList[i], Math.floor(historyNetWorthList[i])];
+        arrayToPlot[i] = [historyDateList[i], historyNetWorthList[i]];
     }
 
     // console.log([historyNetWorthList, historyDateList]) //To be returned

@@ -479,9 +479,11 @@ button {
 
 .axis path,
 .axis line {
+  height: inherit;
+  width: inherit;
   fill: none;
   stroke: #000;
-  shape-rendering: crispEdges;
+  shape-rendering: geometricPrecision;
 }
 
 .x.axis path {
@@ -490,6 +492,16 @@ button {
 
 .line {
   fill: none;
-  stroke: steelblue;
+  stroke: #1d70ca;
   stroke-width: 1.5px;
 }
+
+.area {
+    fill: #82afe4;
+    opacity: 0.7;
+    stroke-width: 0;
+}
+
+/*#svg {
+  padding-left: 30px;
+}*/

@@ -2,11 +2,12 @@ angular.module('SmallcaseTask.directive', [])
 .directive("linearChart", function($window) {
   return {
     restrict: "EA",
-    template: "<svg width='320' height='210'></svg>",
+    template: "<svg width='100%' height='100%'></svg>",
     link: function(scope, elem, attrs){
-      var margin = {top: 20, right: 20, bottom: 30, left: 50},
-          width = 320 - margin.left - margin.right,
-          height = 210 - margin.top - margin.bottom;
+
+      // var margin = {top: 20, right: 20, bottom: 30, left: 50};
+      var width = 280;//- margin.left - margin.right;
+      var height = 120;// - margin.top - margin.bottom;
 
       var x = d3.time.scale()
         .range([0, width]);
@@ -41,23 +42,31 @@ angular.module('SmallcaseTask.directive', [])
             // console.log(+parseDate(d[0]));
             // console.log(+d[1]);
             return {
-               date : +parseDate(d[0])/100000,
+               date : parseDate(d[0]),
                totalprice : +d[1]
             };            
           });
           // console.log(data);
 
-          x.domain(d3.extent(data, function(d) { return d.date; }));
-          y.domain(d3.extent(data, function(d) { return d.totalprice; }));
-
           var line = d3.svg.line()
             .x(function(d) { return x(d.date); })
             .y(function(d) { return y(d.totalprice); });
 
+          var area = d3.svg.area()
+            .x(function(d) { return x(d.date); })
+            .y1(function(d) { return y(d.totalprice); });
+
+          x.domain(d3.extent(data, function(d) { return d.date; }));
+          y.domain(d3.extent(data, function(d) { return d.totalprice; }));
+          area.y0(y(0));
+
           svg.append("g")
             .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
             .call(xAxis)
+            // .append("text")
+            .attr("transform", "translate(0," + height + ")")
+            // .attr("transform", "rotate(-180)")
+            .attr("stroke", "black")
             .text("Time");
 
           svg.append("g")
@@ -72,24 +81,13 @@ angular.module('SmallcaseTask.directive', [])
 
           svg.append("path")
             .datum(data)
-            .attr("fill", "steelblue")
-            .attr("class", "line")
-            .attr("d", line);
+            .attr("fill", "#82afe4")
+            .attr("opacity", "0.7")
+            .attr("stroke", "#1d70ca")
+            // .attr("class", "line")
+            .attr("d", area);
         }
       });
     }
   };
 });
-
-// function mapData(arrData) {
-//   var data = arrData.map(function(d) {
-//     console.log(+parseDate(d[0]));
-//     console.log(+d[1]);
-//     return {
-//        date : +parseDate(d[0])/100000,
-//        totalprice : +d[1]
-//     };            
-//   });
-
-//   return data;
-// }
