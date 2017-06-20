@@ -1,7 +1,7 @@
 {
-  "name": "SmallcaseTask",
+  "name": "smallcase-task",
   "description": "Application for Frontend Developer Role",
-  "version": "0.0.22",
+  "version": "0.0.30",
   "homepage": "https://github.com/kashishgrover/SmallcaseApp",
   "license": "MIT",
   "private": true,
