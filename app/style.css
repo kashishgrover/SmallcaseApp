@@ -213,7 +213,7 @@
 
     border-radius: 4px;
     background-color: #fff;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .5);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2);
 }
 
 .PickStocksLabel
@@ -318,7 +318,6 @@
     line-height: 1.14;
 
     width: 51px;
-    height: 16px;
 
     text-align: center;
 
@@ -345,9 +344,6 @@
     font-weight: 600;
     line-height: 1.14;
 
-    width: 51px;
-    height: 16px;
-
     text-align: center;
 
     color: #222;
@@ -367,7 +363,7 @@
     text-align: center;
 
     color: #222;
-    background-color: #fff;
+    /*background-color: #fff;*/
 }
 
 .StockRowSharesCount
@@ -427,9 +423,12 @@
     left: 32px;
 
     float: left;
+    overflow: auto;
 
     width: 456px;
-    height: 280px;
+    height: 255px;
+
+    border: 1px #fafafa;
 }
 
 .Portfolio-Overview
@@ -553,7 +552,14 @@ table
     border-collapse: collapse;
 }
 
-th,
+th
+{
+    width: 25%;
+
+    color: #fff;
+    background-color: #8fb9e7;
+}
+
 td
 {
     position: relative;
@@ -562,21 +568,23 @@ td
     height: 48px;
 
     color: white;
-    background-color: #8fb9e7;
 }
 
-tr,
-td
+tr
 {
     height: 48px !important;
 
-    color: black;
     background: white;
 }
 
 tr:hover
 {
-    background-color: #f5f5f5;
+    background-color: white;
+}
+
+tr:nth-child(odd)
+{
+    background: #fafafa;
 }
 
 body
@@ -601,33 +609,12 @@ button
     background-repeat: no-repeat;
 }
 
-.axis path,
-.axis line
+.RemoveStockButton
 {
-    width: inherit;
-    height: inherit;
+    font-size: 14px;
 
-    fill: none;
-    stroke: #000;
-    shape-rendering: geometricPrecision;
-}
+    width: 14px;
+    height: 14px;
 
-.x.axis path
-{
-    display: none;
-}
-
-.line
-{
-    fill: none;
-    stroke: #1d70ca;
-    stroke-width: 1.5px;
-}
-
-.area
-{
-    opacity: .7;
-
-    fill: #82afe4;
-    stroke-width: 0;
+    color: #ee7a7a;
 }

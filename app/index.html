@@ -60,6 +60,7 @@
             <th>PRICE</th>
             <th>SHARES</th>
             <th>WEIGHT</th>
+            <th/>
           </tr>
           <tr ng-repeat="element in portfolioArray ">
             <td class="StockRowNameLabel ">{{element[0].split(",")[0]}}</td>
@@ -74,6 +75,8 @@
                   </button>
             </td>
             <td class="StockRowWeight ">{{getWeightage(element)}} %</td>
+            <!-- <td class="RemoveStockButton" />
+            </td> -->
           </tr>
         </table>
       </div>

@@ -2,11 +2,11 @@ angular.module('SmallcaseTask.directive', [])
   .directive("linearChart", function($window) {
     return {
       restrict: "EA",
-      template: "<svg width='100%' height='100%'></svg>",
+      template: "<svg width='320px' height='210px'></svg>",
       link: function(scope, elem, attrs) {
 
-        var width = 280;
-        var height = 120;
+        var width = 320;
+        var height = 210;
 
         var x = d3.time.scale()
           .range([0, width]);
@@ -69,14 +69,14 @@ angular.module('SmallcaseTask.directive', [])
             area.y0(y(0));
 
             svg.append("g")
-              .attr("class", "x axis")
+              .attr("class", "xaxis")
               .call(xAxis)
               .attr("transform", "translate(0," + height + ")")
               .attr("stroke", "black")
               .text("Time");
 
             svg.append("g")
-              .attr("class", "y axis")
+              .attr("class", "yaxis")
               .call(yAxis)
               .append("text")
               .attr("transform", "rotate(-90)")
