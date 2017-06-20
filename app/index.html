@@ -62,8 +62,8 @@
             <th>WEIGHT</th>
           </tr>
           <tr ng-repeat="element in portfolioArray ">
-            <td class="StockRowNameLabel ">{{element[0].split(", ")[0]}}</td>
-            <td class="StockRowPriceLabel ">₹ {{element[0].split(", ")[1]}}</td>
+            <td class="StockRowNameLabel ">{{element[0].split(",")[0]}}</td>
+            <td class="StockRowPriceLabel ">₹ {{element[0].split(",")[1]}}</td>
             <td class="StockRowSharesWrapper ">
               <button class="DecrementSharesCount " ng-click="decrementShareCount(element) ">
                     -

@@ -10,12 +10,11 @@
     padding: 0;
 
     background-image: linear-gradient(to right, #2bc4dd, #3489d1);
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
 }
 
 .smallcase-Portfolio
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 1;
@@ -54,7 +53,6 @@
 
 .NEXT:enabled
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 600;
 
@@ -73,7 +71,6 @@
 
 .NEXT:disabled
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 600;
 
@@ -92,7 +89,6 @@
 
 .PREV:enabled
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 600;
 
@@ -111,7 +107,6 @@
 
 .PREV:disabled
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 600;
 
@@ -130,7 +125,6 @@
 
 .showing-x-of-y
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
 
@@ -157,14 +151,13 @@
     width: auto;
     height: 40px;
 
-    -webkit-box-shadow: 8px 8px 0 0 rgba(0,0,0,.1);
-       -moz-box-shadow: 8px 8px 0 0 rgba(0,0,0,.1);
-            box-shadow: 8px 8px 0 0 rgba(0,0,0,.1);
+    -webkit-box-shadow: 8px 8px 0 0 rgba(0, 0, 0, .1);
+       -moz-box-shadow: 8px 8px 0 0 rgba(0, 0, 0, .1);
+            box-shadow: 8px 8px 0 0 rgba(0, 0, 0, .1);
 }
 
 .PanelLabelText
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 300;
 
@@ -184,19 +177,16 @@
 
 .StockCardWrapper
 {
-    /*text-align: justify;*/
     position: absolute;
     z-index: 10;
 
     float: left;
 
     width: 1140px;
-    /*margin-right: 2.5%;*/
     margin-top: 100px;
     margin-bottom: 76px;
-    /*min-height: 336px;*/
-    /*height: auto;*/
-    margin-left: 2.5%;;
+    margin-left: 2.5%;
+    ;
 }
 
 .flexy
@@ -238,7 +228,6 @@
 
 .StockName
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 1;
@@ -260,7 +249,6 @@
 
 .StockPrice
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 100;
 
@@ -276,9 +264,6 @@
     text-align: left;
 
     color: #666;
-    /*background: red;*/
-    /*-moz-border-radius: 50px;*/
-    /*-webkit-border-radius: 50px;*/
 }
 
 .StockPrice:hover
@@ -309,7 +294,6 @@
 
 .StockLabel
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 12px;
     font-weight: 600;
     line-height: 1.5;
@@ -329,7 +313,6 @@
 
 .StockRowNameLabel
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.14;
@@ -344,7 +327,6 @@
 
 .StockRowPriceLabel
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.14;
@@ -359,7 +341,6 @@
 
 .StockRowWeight
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.14;
@@ -374,8 +355,6 @@
 
 .StockRowSharesWrapper
 {
-    /*border: solid 1px #dddddd;*/
-    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.5;
@@ -388,8 +367,6 @@
     text-align: center;
 
     color: #222;
-    /*height: 24px;*/
-    /*border-radius: 4px;*/
     background-color: #fff;
 }
 
@@ -403,7 +380,6 @@
     height: 24px;
     margin-right: auto;
     margin-left: auto;
-    /*border: solid 1px #dddddd;*/
 
     border-radius: 4px;
 }
@@ -458,7 +434,6 @@
 
 .Portfolio-Overview
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 600;
 
@@ -482,14 +457,11 @@
     position: relative;
     top: 100px;
     left: -170px;
-    /*float: left;*/
 
     display: inline-block;
-    /*background: #eee;*/
 
     width: 320px;
     height: 210px;
-    /*left:;*/
 }
 
 .PortfolioDetailsWrapper
@@ -499,7 +471,6 @@
     bottom: 114px;
 
     display: inline-block;
-    /*height: 210px;*/
     float: right;
 
     width: 320px;
@@ -509,9 +480,6 @@
 
 .PortfolioDetailsLabel
 {
-    /*width: 60px;*/
-    /*height: 20px;*/
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 600;
 
@@ -520,16 +488,13 @@
     text-align: left;
 
     color: #287dce;
-    /*display: inline-block;*/
 }
 
 .PortfolioDetailsQuantity
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 28px;
     font-weight: 300;
     line-height: .93;
-    /*width: 17px;*/
 
     height: 26px;
     padding-top: 5px;
@@ -552,7 +517,6 @@
 
 .BuildButton
 {
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 600;
 
@@ -569,7 +533,6 @@
 
 .BuildButton:active
 {
-    /*vertical-align: top;*/
     margin-top: 30px;
 }
 
@@ -593,8 +556,6 @@ table
 th,
 td
 {
-    font-family: 'Roboto', sans-serif;
-
     position: relative;
 
     width: 25%;
@@ -620,7 +581,7 @@ tr:hover
 
 body
 {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     min-width: 1204px;
     margin: 0;
@@ -639,7 +600,6 @@ button
     background-color: Transparent;
     background-repeat: no-repeat;
 }
-
 
 .axis path,
 .axis line
@@ -671,7 +631,3 @@ button
     fill: #82afe4;
     stroke-width: 0;
 }
-
-/*#svg {
-  padding-left: 30px;
-}*/

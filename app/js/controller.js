@@ -17,10 +17,8 @@ angular.module('SmallcaseTask.controller', [])
       $scope.totalStocks = $scope.stockPrices.length;
       $scope.numberOfPages = numberOfPages($scope.stockPrices, $scope.stockPageSize);
       $scope.stockEPSobj = data.eps;
-      // console.log("Stock EPS",$scope.stockEPSobj);
       $scope.stockHistoricals = data.historical;
       $scope.formattedArray = getFormattedHistoricalArray($scope.stockHistoricals);
-      // $scope.arrayToPlot = $scope.formattedArray[0][1];
     });
 
     $scope.onDropComplete = function(data, evt) {
@@ -135,17 +133,15 @@ function getFormattedHistoricalArray(obj) {
 
     if (typeof properties === "object") {
       var array = [];
-
       for (var propKey in properties) {
         array.push([properties[propKey]]);
       }
 
       var nameArray = getNameArray(array[1]);
-
       formattedArray.push([String(array[0]), nameArray]);
     }
   }
-  // console.log(formattedArray);
+
   return formattedArray;
 }
 
@@ -154,7 +150,6 @@ function getNameArray(array) {
 
   for (var i = 0; i < array.length; i++) {
     for (key in array[i]) {
-      // nameArray.push(array[i][key]["date"]+ "***"+ array[i][key]["price"]);
       var date = array[i][key]["date"].split("T")[0];
       var price = array[i][key]["price"];
       nameArray.push([date, price]);
@@ -165,16 +160,11 @@ function getNameArray(array) {
 }
 
 function getArrayToPlot(formattedArray, portfolioArray) {
-  // console.log(formattedArray);
-
   var historyNetWorthList = [];
   var historyDateList = [];
-
   var historySize = formattedArray[0][1].length;
-  // console.log("historySize: ",historySize)
 
   //Get Historical Dates
-  // console.log(formattedArray[0][1]);
   for (var i = 0; i < historySize; i++) {
     historyDateList.push(formattedArray[0][1][i][0]);
   }
@@ -188,32 +178,22 @@ function getArrayToPlot(formattedArray, portfolioArray) {
   for (var i = 0; i < portfolioArray.length; i++) {
     var count = portfolioArray[i][1];
     var name = portfolioArray[i][0].split(",")[0];
-    // console.log("Name:" + name, "Count:" + count);
 
     for (var j = 0; j < formattedArray.length; j++) {
       if (formattedArray[j][0] === name) {
-        // console.log(formattedArray[j][0])
-        // console.log(count);
         for (var k = 0; k < historySize; k++) {
-          // console.log(formattedArray[j][1][k][1]);
           historyNetWorthList[k] = historyNetWorthList[k] + formattedArray[j][1][k][1] * count;
-          // console.log(historyNetWorthList[k]);
         }
-        // console.log(formattedArray[j][1][0])
       }
     }
   }
 
   //Refactor the array to have format as ["date", value]
-
   var arrayToPlot = [];
 
   for (var i = 0; i < historySize; i++) {
-    // arrayToPlot[i] = [String(historyDateList[i]), Math.floor(historyNetWorthList[i])];
     arrayToPlot[i] = [historyDateList[i], historyNetWorthList[i]];
   }
 
-  // console.log([historyNetWorthList, historyDateList]) //To be returned
-  // console.log(arrayToPlot);
   return arrayToPlot;
 }

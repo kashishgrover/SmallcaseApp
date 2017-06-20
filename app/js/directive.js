@@ -5,9 +5,8 @@ angular.module('SmallcaseTask.directive', [])
       template: "<svg width='100%' height='100%'></svg>",
       link: function(scope, elem, attrs) {
 
-        // var margin = {top: 20, right: 20, bottom: 30, left: 50};
-        var width = 280; //- margin.left - margin.right;
-        var height = 120; // - margin.top - margin.bottom;
+        var width = 280;
+        var height = 120;
 
         var x = d3.time.scale()
           .range([0, width]);
@@ -39,14 +38,11 @@ angular.module('SmallcaseTask.directive', [])
             arrData = scope.arrayToPlot;
 
             data = arrData.map(function(d) {
-              // console.log(+parseDate(d[0]));
-              // console.log(+d[1]);
               return {
                 date: parseDate(d[0]),
                 totalprice: +d[1]
               };
             });
-            // console.log(data);
 
             var line = d3.svg.line()
               .x(function(d) {
@@ -75,9 +71,7 @@ angular.module('SmallcaseTask.directive', [])
             svg.append("g")
               .attr("class", "x axis")
               .call(xAxis)
-              // .append("text")
               .attr("transform", "translate(0," + height + ")")
-              // .attr("transform", "rotate(-180)")
               .attr("stroke", "black")
               .text("Time");
 
@@ -96,7 +90,6 @@ angular.module('SmallcaseTask.directive', [])
               .attr("fill", "#82afe4")
               .attr("opacity", "0.7")
               .attr("stroke", "#1d70ca")
-              // .attr("class", "line")
               .attr("d", area);
           }
         });
