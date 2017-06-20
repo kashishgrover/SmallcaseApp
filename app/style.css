@@ -266,32 +266,6 @@
     color: #666;
 }
 
-.StockPrice:hover
-{
-    color: transparent;
-}
-
-.StockPrice:hover ~ .AddStockButton:after
-{
-    font: 'Material Icons';
-    font-size: 50px;
-    font-weight: 100;
-
-    position: relative;
-    z-index: 21;
-    bottom: 50px;
-    left: 50px;
-
-    float: right;
-
-    margin-top: 0;
-
-    content: 'playlist_add';
-
-    color: #00a9d2;
-    background: white;
-}
-
 .StockLabel
 {
     font-size: 12px;
@@ -376,6 +350,7 @@
     height: 24px;
     margin-right: auto;
     margin-left: auto;
+    padding-top: 5px;
 
     border-radius: 4px;
 }
@@ -428,7 +403,9 @@
     width: 456px;
     height: 255px;
 
-    border: 1px #fafafa;
+    border: 2px #fafafa;
+
+    z-axis: 10000;
 }
 
 .Portfolio-Overview
@@ -562,12 +539,7 @@ th
 
 td
 {
-    position: relative;
-
-    width: 25%;
     height: 48px;
-
-    color: white;
 }
 
 tr
@@ -579,7 +551,7 @@ tr
 
 tr:hover
 {
-    background-color: white;
+    background: #eee;
 }
 
 tr:nth-child(odd)
@@ -587,11 +559,17 @@ tr:nth-child(odd)
     background: #fafafa;
 }
 
+tr:nth-child(even)
+{
+    background: #fefefe;
+}
+
 body
 {
     font-family: 'Roboto', sans-serif;
 
-    min-width: 1204px;
+    min-width: 1366px;
+    min-height: 768px;
     margin: 0;
 
     background-color: #f9f9f9;

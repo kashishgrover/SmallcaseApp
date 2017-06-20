@@ -69,14 +69,14 @@ angular.module('SmallcaseTask.directive', [])
             area.y0(y(0));
 
             svg.append("g")
-              .attr("class", "xaxis")
+              .attr("class", "x axis")
               .call(xAxis)
               .attr("transform", "translate(0," + height + ")")
               .attr("stroke", "black")
               .text("Time");
 
             svg.append("g")
-              .attr("class", "yaxis")
+              .attr("class", "y axis")
               .call(yAxis)
               .append("text")
               .attr("transform", "rotate(-90)")

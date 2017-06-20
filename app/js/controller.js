@@ -10,7 +10,7 @@ angular.module('SmallcaseTask.controller', [])
     $scope.graphArray = [];
     $scope.arrayToPlot = [];
 
-    var isDropping = true;
+    var cardIsDropping = true;
 
     $http.get('data/data.json').success(function(data) {
       $scope.stockPrices = getArray(data.price);
@@ -22,7 +22,7 @@ angular.module('SmallcaseTask.controller', [])
     });
 
     $scope.onDropComplete = function(data, evt) {
-      isDropping = true;
+      cardIsDropping = true;
       $scope.portfolioDict[data] = ($scope.portfolioDict[data] || 0) + 1;
       $scope.portfolioArray = getArray($scope.portfolioDict);
       $scope.netWorth = calculateNetWorth($scope.portfolioArray);
@@ -30,8 +30,8 @@ angular.module('SmallcaseTask.controller', [])
     }
 
     $scope.onClick = function(data) {
-      if (isDropping)
-        isDropping = false;
+      if (cardIsDropping)
+        cardIsDropping = false;
       else {
         $scope.portfolioDict[data] = ($scope.portfolioDict[data] || 0) + 1;
         $scope.portfolioArray = getArray($scope.portfolioDict);
